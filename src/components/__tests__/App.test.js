@@ -28,6 +28,8 @@ it('shows a comment box', () => {
      * value that we expect to see: Expected values, its what we want our 'subject' to be.
      */
     expect(div.innerHTML).toContain("I'm comment bo");
+    // Above expect statement is not the right way to detect the presence of the component i.e CommentBox.
+
 
     // After everything is done, clean that div by removing App component
     ReactDOM.unmountComponentAtNode(div);
