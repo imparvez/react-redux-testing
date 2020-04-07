@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 
+// Test Cases for CommentBox
+// - Shows a textarea and button.
+// - User can enter text into textarea and submit it.
+// - When the input is submitted, textarea should get empty. 
+
 class CommentBox extends Component {
     state = { comment: '' }
 
