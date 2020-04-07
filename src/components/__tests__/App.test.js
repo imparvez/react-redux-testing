@@ -5,6 +5,14 @@ import { App } from 'components/App'
 import { CommentBox } from 'components/CommentBox'
 import { CommentList } from 'components/CommentList'
 
+let wrapped;
+
+// Over here, we are using beforeEach to initiate common pattern from both
+// the test cases i.e initiating wrapped variable with <App /> component.
+beforeEach(() => {
+    wrapped = shallow(<App />);
+});
+
 /***
  * Test Structure
  * it('description of the test', 'function containing our test logic')
@@ -35,11 +43,9 @@ it('shows a comment box', () => {
     // ReactDOM.unmountComponentAtNode(div);
 
     // Refactor using Enzyme:
-    const wrapped = shallow(<App />);
     expect(wrapped.find(CommentBox).length).toEqual(1);
 });
 
 it('shows a comment list', () => {
-    const wrapped = shallow(<App />);
     expect(wrapped.find(CommentList).length).toEqual(1);
 });
