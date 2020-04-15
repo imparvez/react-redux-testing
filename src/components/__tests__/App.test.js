@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 
 import { App } from 'components/App'
 import CommentBox from 'components/CommentBox'
-import { CommentList } from 'components/CommentList'
+import CommentList from 'components/CommentList'
 
 let wrapped;
 
