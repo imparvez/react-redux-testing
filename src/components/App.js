@@ -1,6 +1,6 @@
 import React from 'react'
 import CommentBox from 'components/CommentBox'
-import { CommentList } from 'components/CommentList'
+import CommentList from 'components/CommentList'
 
 export const App = () => {
     return (
