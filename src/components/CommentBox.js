@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { saveComment } from 'actions';
 
 // Test Cases for CommentBox
 // - Shows a textarea and button.
@@ -16,6 +18,7 @@ class CommentBox extends Component {
         e.preventDefault();
 
         // TODO - Call an action creator and save the comment
+        this.props.saveComment(this.state.comment);
 
         this.setState({ comment: '' });
     }
@@ -33,4 +36,4 @@ class CommentBox extends Component {
     }
 }
 
-export default CommentBox
+export default connect(null, { saveComment })(CommentBox)

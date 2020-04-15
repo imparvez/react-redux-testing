@@ -1,13 +1,14 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import CommentBox from 'components/CommentBox'
+import Root from 'Root'
 
 let wrapped;
 
 beforeEach(() => {
     // Full Mount or mount will out <CommentBox /> into fake DOM and returned it to
     // wrapped variable.
-    wrapped = mount(<CommentBox />);
+    wrapped = mount(<Root><CommentBox /></Root>);
 })
 
 it('shows a textarea and button', () => {
