@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { saveComment } from 'actions';
+import { saveComment, fetchComments } from 'actions';
 
 // Test Cases for CommentBox
 // - Shows a textarea and button.
@@ -23,17 +23,24 @@ class CommentBox extends Component {
         this.setState({ comment: '' });
     }
 
+    handleFetchComments = () => {
+        this.props.fetchComments()
+    }
+
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <h4>Add a comment</h4>
-                <textarea value={this.state.comment} onChange={this.handleChange} />
-                <div>
-                    <button>Submit a comment</button>
-                </div>
-            </form>
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    <h4>Add a comment</h4>
+                    <textarea value={this.state.comment} onChange={this.handleChange} />
+                    <div>
+                        <button>Submit a comment</button>
+                    </div>
+                </form>
+                <button onClick={this.handleFetchComments}>Fetch Comments</button>
+            </div>
         )
     }
 }
 
-export default connect(null, { saveComment })(CommentBox)
+export default connect(null, { saveComment, fetchComments })(CommentBox)
