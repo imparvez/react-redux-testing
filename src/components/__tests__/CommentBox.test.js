@@ -18,7 +18,7 @@ it('shows a textarea and button', () => {
 
     expect(wrapped.find('textarea').length).toEqual(1);
     // For failure: expect(wrapped.find('textarea').length).toEqual(2);
-    expect(wrapped.find('button').length).toEqual(1);
+    expect(wrapped.find('button').length).toEqual(2);
     // For failure: expect(wrapped.find('button').length).toEqual(12);
 });
 
