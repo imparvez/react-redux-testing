@@ -43,4 +43,12 @@ class CommentBox extends Component {
     }
 }
 
-export default connect(null, { saveComment, fetchComments })(CommentBox)
+const mapDispatchToProps = dispatch => {
+    return {
+      // dispatching actions returned by action creators
+      saveComment: (comment) => dispatch(saveComment(comment)),
+      fetchComments: () => dispatch(fetchComments()),
+    }
+}
+
+export default connect(null, mapDispatchToProps)(CommentBox)
